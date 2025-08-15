@@ -3,18 +3,36 @@ import React from "react";
 import "./ChatWindow.css";
 
 export default function ChatWindow({ chat, onBack, isMobile }) {
-  if (!chat) {
-    return (
-      <div className="chat-window empty">
-        <img
-          src="https://www.shutterstock.com/image-vector/omnichannel-marketing-live-chat-chatbot-260nw-2179324873.jpg"
-          alt="No chat selected"
-        />
-        <p>Select a chat to start messaging</p>
-        <p>You can also create a new chat</p>
-      </div>
-    );
-  }
+if (!chat) {
+  return (
+    <div
+      className="chat-window"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        textAlign: "center",
+        height: "100%",
+        padding: "20px",
+        background: "#ece5dd",
+      }}
+    >
+      <img
+        src="https://thumbs.dreamstime.com/b/ai-generated-social-media-scene-vibrant-illustration-depicts-diverse-individuals-interacting-various-platforms-374725123.jpg" // use a direct link
+        alt="No chat selected"
+        style={{ maxWidth: "400px", marginBottom: "20px" }}
+      />
+      <p style={{ fontSize: "16px", color: "#555", marginBottom: "8px" }}>
+        Select a chat to start messaging
+      </p>
+      <p style={{ fontSize: "14px", color: "#888" }}>
+        you can also create a new chat by clicking the "New chat" button in the sidebar.
+      </p>
+    </div>
+  );
+}
+
 
 function initials(name = "") {
   const parts = name.trim().split(/\s+/).slice(0, 2);
@@ -24,7 +42,8 @@ function initials(name = "") {
     <div className="chat-window">
       <div className="chat-header">
         {isMobile && (
-          <button className="back-btn" onClick={onBack}>
+          <button className="back-btn" style={{ marginRight: "10px" , color: "#075e54"}}
+           onClick={onBack}>
             ⬅
           </button>
         )}

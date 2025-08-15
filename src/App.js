@@ -78,9 +78,9 @@ export default function App() {
       )}
 
       {/* Chat Window */}
-      {(!isMobile || showChatWindow) && selectedChat && (
+      {(!isMobile || showChatWindow) && (
         <ChatWindow
-          chat={selectedChat}
+          chat={selectedChat} 
           onBack={handleBack}
           isMobile={isMobile}
         />
