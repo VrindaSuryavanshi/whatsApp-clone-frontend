@@ -1,0 +1,45 @@
+.chat-window {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.message-bubble {
+    max-width: 60%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.message-bubble.sent {
+    align-self: flex-end;
+    background-color: #dcf8c6;
+    /* WhatsApp green */
+}
+
+.message-bubble.received {
+    align-self: flex-start;
+    background-color: #fff;
+}
+
+.message-bubble .meta {
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 4px;
+    margin-top: 2px;
+    color: #888;
+}
+
+.status.sent {
+    color: gray;
+}
+
+.status.delivered {
+    color: #34b7f1;
+}
+
+.status.read {
+    color: blue;
+}
