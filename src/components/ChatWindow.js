@@ -5,32 +5,17 @@ import "./ChatWindow.css";
 export default function ChatWindow({ chat, onBack, isMobile }) {
   if (!chat) {
     return (
-      <div
-        className="chat-window"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100%", // make sure chat-window has a height
-          textAlign: "center",
-          padding: "20px",
-        }}
-      >
+      <div className="chat-window empty">
         <img
           src="https://www.shutterstock.com/image-vector/omnichannel-marketing-live-chat-chatbot-260nw-2179324873.jpg"
           alt="No chat selected"
-          style={{ maxWidth: "200px", marginBottom: "20px" }}
         />
-        <p style={{ fontSize: "16px", color: "#555", marginBottom: "8px" }}>
-          Select a chat to start messaging
-        </p>
-        <p style={{ fontSize: "14px", color: "#888" }}>
-          You can also create a new chat
-        </p>
+        <p>Select a chat to start messaging</p>
+        <p>You can also create a new chat</p>
       </div>
     );
   }
+
 function initials(name = "") {
   const parts = name.trim().split(/\s+/).slice(0, 2);
   return parts.map((p) => p[0]?.toUpperCase() || "").join("") || "U";
